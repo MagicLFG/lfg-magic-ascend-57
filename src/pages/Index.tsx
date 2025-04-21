@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import { Navbar } from '@/components/navigation/Navbar';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { ServicesSection } from '@/components/sections/ServicesSection';
+import { MetricsSection } from '@/components/sections/MetricsSection';
+import { EcosystemCarousel } from '@/components/sections/EcosystemCarousel';
+import { PlaybookSection } from '@/components/sections/PlaybookSection';
+import { TeamSection } from '@/components/sections/TeamSection';
+import { ClientLogos } from '@/components/sections/ClientLogos';
+import { Footer } from '@/components/layout/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-web3-dark text-white">
+      <Navbar />
+      <HeroSection />
+      <ServicesSection />
+      <MetricsSection />
+      <EcosystemCarousel />
+      <PlaybookSection />
+      <TeamSection />
+      <ClientLogos />
+      <Footer />
     </div>
   );
 };
