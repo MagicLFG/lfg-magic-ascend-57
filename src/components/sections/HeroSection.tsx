@@ -1,24 +1,122 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 export const HeroSection = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Set canvas to full window size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    // Initialize particles
+    let particles: { x: number; y: number; radius: number; color: string; speedX: number; speedY: number }[] = [];
+    const particleCount = 100;
+    const colors = ['#8B5CF6', '#9b87f5', '#7E69AB', '#1EAEDB'];
+
+    const initParticles = () => {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 3 + 1,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          speedX: Math.random() * 0.5 - 0.25,
+          speedY: Math.random() * 0.5 - 0.25
+        });
+      }
+    };
+
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw gradient background
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, 'rgba(15, 15, 25, 1)');
+      gradient.addColorStop(1, 'rgba(18, 18, 35, 1)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw particles
+      particles.forEach(particle => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.globalAlpha = 0.3;
+        ctx.fill();
+        
+        // Move particles
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
+        
+        // Wrap around screen
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+      });
+      
+      // Draw connections
+      ctx.globalAlpha = 0.15;
+      ctx.strokeStyle = '#8B5CF6';
+      ctx.lineWidth = 0.5;
+      
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      
+      requestAnimationFrame(animate);
+    };
+
+    // Set up event listeners
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+
+    resizeCanvas();
+    initParticles();
+    animate();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-web3-dark hero-gradient opacity-20"></div>
+      {/* Canvas for particle animation */}
+      <canvas 
+        ref={canvasRef} 
+        className="absolute inset-0 w-full h-full"
+        style={{ zIndex: 0 }}
+      />
       
-      {/* Particle effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 opacity-20" style={{ 
-          backgroundImage: 'radial-gradient(rgba(139, 92, 246, 0.1) 2px, transparent 2px), radial-gradient(rgba(30, 174, 219, 0.05) 2px, transparent 2px)',
-          backgroundSize: '50px 50px, 60px 60px',
-          backgroundPosition: '0 0, 25px 25px'
-        }}></div>
-      </div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-32 md:py-40 text-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-32 md:py-40 text-center z-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-grotesk mb-6 text-gradient animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s' }}>
           We help Web3 ecosystems<br /> dominate in Asia.
         </h1>
