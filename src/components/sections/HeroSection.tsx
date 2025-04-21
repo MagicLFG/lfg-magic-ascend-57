@@ -100,11 +100,16 @@ export const HeroSection = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (!heroContentRef.current) return;
-      const maxScroll = window.innerHeight * 0.6;
+      // Make the fade/scale effect slower and gentler
+      const maxScroll = window.innerHeight * 1.2; // Increased from 0.6 for slower fade
       const scrollY = window.scrollY;
       const t = Math.min(scrollY / maxScroll, 1);
-      heroContentRef.current.style.opacity = String(1 - t * 0.75);
-      heroContentRef.current.style.transform = `scale(${1 - t * 0.25}) translateY(${t * -50}px)`;
+
+      // Make the opacity decrease even slower and the scale drop more gently
+      // 0.5 here means: even at full t=1, content only fades to 50% opacity; adjust as needed
+      heroContentRef.current.style.opacity = String(1 - t * 0.5);
+      // 0.12 means only 12% reduction at max
+      heroContentRef.current.style.transform = `scale(${1 - t * 0.12}) translateY(${t * -40}px)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
