@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Navbar } from '@/components/navigation/Navbar';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -16,10 +15,12 @@ const Index = () => {
     <div className="min-h-screen bg-web3-dark text-white">
       <Navbar />
       <HeroSection />
+      <ServicesSection />
       <MetricsSection />
+      <EcosystemCarousel />
       <PlaybookSection />
       <BuiltDifferentSection />
-      <EcosystemCarousel />
+      <TeamSection />
       <ClientLogos />
       <Footer />
     </div>
