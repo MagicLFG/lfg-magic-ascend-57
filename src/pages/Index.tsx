@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Navbar } from '@/components/navigation/Navbar';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -14,12 +15,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-web3-dark text-white">
       <Navbar />
+      {/* Move BuiltDifferentSection first */}
+      <BuiltDifferentSection />
       <HeroSection />
       <ServicesSection />
       <MetricsSection />
       <EcosystemCarousel />
       <PlaybookSection />
-      <BuiltDifferentSection />
       <TeamSection />
       <ClientLogos />
       <Footer />
