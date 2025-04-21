@@ -1,4 +1,6 @@
+
 import React, { useEffect, useRef, useState } from 'react';
+
 interface CountUpProps {
   end: number;
   suffix?: string;
@@ -6,6 +8,7 @@ interface CountUpProps {
   duration?: number;
   delay?: number;
 }
+
 const CountUp: React.FC<CountUpProps> = ({
   end,
   suffix = '',
@@ -16,6 +19,7 @@ const CountUp: React.FC<CountUpProps> = ({
   const [count, setCount] = useState(0);
   const countRef = useRef<HTMLSpanElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && !hasAnimated) {
@@ -41,24 +45,35 @@ const CountUp: React.FC<CountUpProps> = ({
     }, {
       threshold: 0.1
     });
+
     if (countRef.current) {
       observer.observe(countRef.current);
     }
+
     return () => {
       if (countRef.current) {
         observer.unobserve(countRef.current);
       }
     };
   }, [end, duration, delay, hasAnimated]);
+
   return <span ref={countRef}>
       {prefix}{count}{suffix}
     </span>;
 };
+
 export const MetricsSection = () => {
-  return <section className="py-20 md:py-32 bg-web3-dark relative overflow-hidden">
-      {/* Parallax background text */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="whitespace-nowrap text-[8rem] md:text-[12rem] font-bold text-white opacity-[0.03] tracking-tight animate-slide-left flex items-center">
+  return (
+    <section className="py-20 md:py-32 bg-web3-dark relative overflow-hidden">
+      {/* Parallax background text - Fixed the z-index and animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div 
+          className="whitespace-nowrap text-[8rem] md:text-[12rem] font-bold text-white opacity-[0.03] tracking-tight flex items-center"
+          style={{
+            animation: 'slide-left 20s linear infinite',
+            willChange: 'transform'
+          }}
+        >
           <span className="inline-block mx-12">Web3 Reach</span>
           <span className="inline-block mx-12">2B+ Impressions</span>
           <span className="inline-block mx-12">900+ KOLs</span>
@@ -107,5 +122,6 @@ export const MetricsSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
