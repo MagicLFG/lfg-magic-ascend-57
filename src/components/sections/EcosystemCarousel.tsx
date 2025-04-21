@@ -117,11 +117,11 @@ export const EcosystemCarousel = () => {
         </div>
       </div>
       
-      <style jsx>{`
-        .hide-scrollbar::-webkit-scrollbar {
+      <style>
+        {`.hide-scrollbar::-webkit-scrollbar {
           display: none;
-        }
-      `}</style>
+        }`}
+      </style>
     </section>
   );
 };
