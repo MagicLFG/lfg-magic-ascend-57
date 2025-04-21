@@ -33,9 +33,10 @@ export const PlaybookSection = () => {
         <div className="mt-16 flex justify-center">
           <div className="card-border rounded-xl p-8 max-w-2xl text-center">
             <h3 className="text-2xl font-bold mb-4 text-gradient">Ready to launch in Asia?</h3>
-            <p className="text-gray-300 mb-6">
-              Our proven methodology has helped dozens of projects achieve massive growth across Asian markets.
-            </p>
+            <p className="text-gray-300 mb-6">We work with teams who are ready to scale with intent. 
+Operating across Singapore, Hong Kong, and Seoul.
+
+  Strategic marketing for ecosystems that want to win</p>
             <button className="bg-web3-purple hover:bg-web3-purpleLight text-white px-8 py-3 rounded-md text-lg font-medium transition-all">
               Book a Strategy Call
             </button>
