@@ -21,7 +21,7 @@ export const HeroSection = () => {
 
     // Initialize particles
     let particles: { x: number; y: number; radius: number; color: string; speedX: number; speedY: number }[] = [];
-    const particleCount = 100;
+    const particleCount = 150; // Increased particle count
     const colors = ['#8B5CF6', '#9b87f5', '#7E69AB', '#1EAEDB'];
 
     const initParticles = () => {
@@ -38,28 +38,28 @@ export const HeroSection = () => {
       }
     };
 
-    // Animation loop
+    // Animation loop with improved effects
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw gradient background
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, 'rgba(15, 15, 25, 1)');
-      gradient.addColorStop(1, 'rgba(18, 18, 35, 1)');
+      gradient.addColorStop(0, 'rgba(15, 15, 25, 0.99)');
+      gradient.addColorStop(1, 'rgba(18, 18, 35, 0.99)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Draw particles
+      // Draw particles with improved visuals
       particles.forEach(particle => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
         ctx.fillStyle = particle.color;
-        ctx.globalAlpha = 0.3;
+        ctx.globalAlpha = 0.4; // Increased opacity
         ctx.fill();
         
-        // Move particles
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
+        // Move particles with slightly faster animation
+        particle.x += particle.speedX * 1.2;
+        particle.y += particle.speedY * 1.2;
         
         // Wrap around screen
         if (particle.x < 0) particle.x = canvas.width;
@@ -68,10 +68,9 @@ export const HeroSection = () => {
         if (particle.y > canvas.height) particle.y = 0;
       });
       
-      // Draw connections
-      ctx.globalAlpha = 0.15;
-      ctx.strokeStyle = '#8B5CF6';
-      ctx.lineWidth = 0.5;
+      // Draw connections with improved appearance
+      ctx.globalAlpha = 0.2; // Increased connection opacity
+      ctx.lineWidth = 0.6; // Thicker lines
       
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -79,8 +78,9 @@ export const HeroSection = () => {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
+          if (distance < 120) { // Increased connection distance
             ctx.beginPath();
+            ctx.strokeStyle = particles[i].color; // Use particle colors for connections
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
@@ -108,8 +108,8 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Canvas for particle animation */}
+    <section className="relative h-screen w-screen flex items-center overflow-hidden">
+      {/* Canvas for particle animation - Full screen */}
       <canvas 
         ref={canvasRef} 
         className="absolute inset-0 w-full h-full"

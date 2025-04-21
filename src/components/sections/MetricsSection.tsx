@@ -65,13 +65,20 @@ const CountUp: React.FC<CountUpProps> = ({
 export const MetricsSection = () => {
   return (
     <section className="py-20 md:py-32 bg-web3-dark relative overflow-hidden">
-      {/* Parallax background text - Fixed the z-index and animation */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Background text animation - Fixed z-index and animation */}
+      <div 
+        className="absolute inset-0 overflow-hidden pointer-events-none" 
+        style={{ zIndex: 1 }}
+      >
         <div 
-          className="whitespace-nowrap text-[8rem] md:text-[12rem] font-bold text-white opacity-[0.03] tracking-tight flex items-center"
+          className="absolute whitespace-nowrap text-[8rem] md:text-[12rem] font-bold text-white opacity-[0.03] tracking-tight flex"
           style={{
-            animation: 'slide-left 20s linear infinite',
-            willChange: 'transform'
+            width: "max-content",
+            animation: "slide-left 20s linear infinite",
+            willChange: "transform",
+            transform: "translateX(0)",
+            top: "50%",
+            marginTop: "-6rem"
           }}
         >
           <span className="inline-block mx-12">Web3 Reach</span>
@@ -85,7 +92,7 @@ export const MetricsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative" style={{ zIndex: 5 }}>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">The Amplifiers</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
