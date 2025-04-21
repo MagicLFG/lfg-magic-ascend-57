@@ -6,6 +6,7 @@ import { Info, Grid2x2 } from "lucide-react";
 export const BuiltDifferentSection = () => {
   return (
     <section
+      id="about"
       className="relative py-20 px-6 md:px-12 lg:px-24"
       style={{
         background: "linear-gradient(99deg, #1EAEDB88 0%, #8B5CF670 100%)",

@@ -4,11 +4,10 @@ import { MenuIcon, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-// Updated NavItems: removed "Team" and "Mission"
 const NavItems = [
   { name: 'About', href: '#about' },
   { name: 'The Playbook', href: '#playbook' },
-  { name: 'Clients', href: '#clients' },
+  { name: 'Clients', href: '#ecosystem' },
   { name: 'Contact', href: '#contact' },
 ];
 

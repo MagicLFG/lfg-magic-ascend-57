@@ -15,14 +15,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-web3-dark text-white">
       <Navbar />
-      {/* Move BuiltDifferentSection first */}
-      <BuiltDifferentSection />
       <HeroSection />
-      <ServicesSection />
       <MetricsSection />
-      <EcosystemCarousel />
       <PlaybookSection />
-      <TeamSection />
+      <BuiltDifferentSection />
+      <EcosystemCarousel />
       <ClientLogos />
       <Footer />
     </div>
