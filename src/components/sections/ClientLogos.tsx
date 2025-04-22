@@ -42,31 +42,50 @@ const clients = [
 
 export const ClientLogos = () => {
   return (
-    <section id="clients" className="py-20 bg-web3-darkAlt">
+    <section id="clients" className="py-20 bg-web3-darkAlt overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Trusted By</h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6">
-          {clients.map((client, index) => (
-            <div 
-              key={client.name} 
-              className="flex flex-col items-center justify-center p-6 card-border rounded-xl animate-fade-in-up opacity-0" 
-              style={{animationDelay: `${0.05 * index}s`}}
-            >
-              <img 
-                src={client.logo} 
-                alt={client.name} 
-                className="h-12 w-auto object-contain"
-                onError={(e) => {
-                  console.error(`Failed to load image: ${client.logo}`);
-                  e.currentTarget.src = "/placeholder.svg";
-                }}
-              />
-              <p className="mt-2 text-sm text-gray-400">{client.name}</p>
-            </div>
-          ))}
+        <div className="logos-slider">
+          <div className="logos-slide-track pause-on-hover">
+            {/* First set of logos - the duplicated sets create the infinite loop effect */}
+            {clients.map((client) => (
+              <div key={`${client.name}-1`} className="logo-item">
+                <div className="p-4 card-border rounded-xl bg-gradient-to-br from-black/30 to-black/10 backdrop-blur-sm">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name} 
+                    className="h-12 w-auto object-contain"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${client.logo}`);
+                      e.currentTarget.src = "/placeholder.svg";
+                    }}
+                  />
+                </div>
+                <p className="mt-2 text-sm text-gray-400">{client.name}</p>
+              </div>
+            ))}
+            
+            {/* Duplicate set for seamless looping */}
+            {clients.map((client) => (
+              <div key={`${client.name}-2`} className="logo-item">
+                <div className="p-4 card-border rounded-xl bg-gradient-to-br from-black/30 to-black/10 backdrop-blur-sm">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name} 
+                    className="h-12 w-auto object-contain"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${client.logo}`);
+                      e.currentTarget.src = "/placeholder.svg";
+                    }}
+                  />
+                </div>
+                <p className="mt-2 text-sm text-gray-400">{client.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
