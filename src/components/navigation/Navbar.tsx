@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 const NavItems = [
   { name: 'About', href: '#built-different' },
-  { name: 'The Playbook', href: '#playbook' },
+  { name: 'The Playbook', href: '#services' },
   { name: 'Clients', href: '#communities' },
   { name: 'Contact', href: '#contact' },
 ];

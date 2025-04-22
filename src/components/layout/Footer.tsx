@@ -6,9 +6,9 @@ export const Footer = () => {
   return (
     <footer id="contact" className="bg-web3-dark border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col items-center md:items-start">
           <div>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center md:text-left">
               Let's build something that lasts.
             </h3>
             <div className="flex items-center text-gray-300 mb-4">
@@ -39,23 +39,6 @@ export const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-web3-purple transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-            </div>
-          </div>
-          
-          <div className="card-border rounded-xl p-8">
-            <h4 className="text-xl font-bold mb-6 text-gradient">Get Our Web3 Asia Insights</h4>
-            <p className="text-gray-300 mb-6">
-              Subscribe to receive our exclusive insights on Web3 marketing trends and opportunities in Asian markets.
-            </p>
-            <div className="flex flex-col md:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="bg-web3-dark border border-gray-700 text-white rounded-md px-4 py-3 flex-grow focus:outline-none focus:border-web3-purple"
-              />
-              <button className="bg-web3-purple hover:bg-web3-purpleLight text-white px-6 py-3 rounded-md font-medium transition-all whitespace-nowrap">
-                Subscribe
-              </button>
             </div>
           </div>
         </div>

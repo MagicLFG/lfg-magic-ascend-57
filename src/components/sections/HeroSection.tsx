@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -182,10 +183,17 @@ export const HeroSection = () => {
           className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
           style={{ animationDelay: '0.6s' }}
         >
-          <Button className="bg-web3-purple hover:bg-web3-purpleLight text-white px-8 py-6 rounded-md text-lg">
+          <Button 
+            className="bg-web3-purple hover:bg-web3-purpleLight text-white px-8 py-6 rounded-md text-lg"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             {"Let's Build"}
           </Button>
-          <Button variant="outline" className="border-web3-purple text-white hover:bg-web3-purple/10 px-8 py-6 rounded-md text-lg">
+          <Button 
+            variant="outline" 
+            className="border-web3-purple text-white hover:bg-web3-purple/10 px-8 py-6 rounded-md text-lg"
+            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             See The Playbook <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
