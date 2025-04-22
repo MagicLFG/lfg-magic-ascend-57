@@ -1,14 +1,13 @@
-
 import React from 'react';
 
 const clients = [
   {
     name: 'Galxe',
-    logo: '/lovable-uploads/99b75027-eb4d-401d-aeb6-604cc624dfd8.png'
+    logo: '/Galxe_Logo_Wordmark_White.png'
   }, 
   {
     name: 'KuCoin',
-    logo: '/lovable-uploads/a57c7f42-4232-4785-a203-3c1601a45e7a.png'
+    logo: '/Kucoin.jpg'
   }, 
   {
     name: 'Up Network',
