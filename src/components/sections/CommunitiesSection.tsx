@@ -2,19 +2,19 @@
 import React, { useEffect, useRef } from 'react';
 
 const flags = [
-  { code: 'CN', country: 'China', flag: '🇨🇳' },
-  { code: 'KR', country: 'South Korea', flag: '🇰🇷' },
-  { code: 'JP', country: 'Japan', flag: '🇯🇵' },
-  { code: 'VN', country: 'Vietnam', flag: '🇻🇳' },
-  { code: 'TH', country: 'Thailand', flag: '🇹🇭' },
-  { code: 'RU', country: 'Russia', flag: '🇷🇺' },
-  { code: 'TR', country: 'Turkey', flag: '🇹🇷' },
-  { code: 'SG', country: 'Singapore', flag: '🇸🇬' },
-  { code: 'HK', country: 'Hong Kong', flag: '🇭🇰' },
-  { code: 'IN', country: 'India', flag: '🇮🇳' },
-  { code: 'MY', country: 'Malaysia', flag: '🇲🇾' },
-  { code: 'ID', country: 'Indonesia', flag: '🇮🇩' },
-  { code: 'AE', country: 'UAE', flag: '🇦🇪' },
+  { code: 'CN', country: 'China', flag: '/china-flag-png-large.png' },
+  { code: 'KR', country: 'South Korea', flag: '/south-korea-flag-png-large.png' },
+  { code: 'JP', country: 'Japan', flag: '/japan-flag-png-large.png' },
+  { code: 'VN', country: 'Vietnam', flag: '/vietnam-flag-png-large.png' },
+  { code: 'TH', country: 'Thailand', flag: '/thailand-flag-png-large.png' },
+  { code: 'RU', country: 'Russia', flag: '/russia-flag-png-large.png' },
+  { code: 'TR', country: 'Turkey', flag: '/turkey-flag-png-large.png' },
+  { code: 'SG', country: 'Singapore', flag: '/singapore-flag-png-large.png' },
+  { code: 'HK', country: 'Hong Kong', flag: '/hongkong-flag-jpg-xl.jpg' },
+  { code: 'IN', country: 'India', flag: '/india-flag-png-large.png' },
+  { code: 'MY', country: 'Malaysia', flag: '/malaysia-flag-png-large.png' },
+  { code: 'ID', country: 'Indonesia', flag: '/indonesia-flag-png-large.png' },
+  { code: 'AE', country: 'UAE', flag: '/united-arab-emirates-flag-png-large.png' },
   { code: 'GLOBAL', country: 'Global', flag: '🌐' },
 ];
 
@@ -60,7 +60,19 @@ export const CommunitiesSection = () => {
               className="flex flex-col items-center text-center opacity-0"
               style={{ animationDelay: `${0.05 * index}s` }}
             >
-              <span className="text-6xl sm:text-7xl mb-3" role="img" aria-label={flag.country}>{flag.flag}</span>
+              {flag.code === 'GLOBAL' ? (
+                <span className="text-6xl sm:text-7xl mb-3" role="img" aria-label={flag.country}>{flag.flag}</span>
+              ) : (
+                <img 
+                  src={flag.flag} 
+                  alt={`${flag.country} flag`}
+                  className="w-16 h-12 sm:w-20 sm:h-14 object-cover rounded-sm mb-3"
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${flag.flag}`);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
+                />
+              )}
               <div className="text-sm text-gray-400">{flag.country}</div>
             </div>
           ))}
@@ -69,3 +81,4 @@ export const CommunitiesSection = () => {
     </section>
   );
 };
+
