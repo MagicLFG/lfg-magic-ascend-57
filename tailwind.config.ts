@@ -124,7 +124,7 @@ export default {
     },
     fontFamily: {
       sans: ['"ringside-regular"', 'system-ui', 'sans-serif'],
-      grotesk: ['"chronicle-display"', 'Georgia', 'serif'],
+      display: ['Belanosima', 'sans-serif'],
     },
   },
   plugins: [require("tailwindcss-animate")],
