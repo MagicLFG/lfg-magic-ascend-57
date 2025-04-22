@@ -1,41 +1,42 @@
+
 import React from 'react';
 
 const clients = [
   {
     name: 'Galxe',
-    logo: '/Galxe_Logo_Wordmark_White.png'
-  }, 
+    logo: '/galxe.png'
+  },
   {
     name: 'KuCoin',
-    logo: '/Kucoin.jpg'
-  }, 
+    logo: '/kucoin.png'
+  },
   {
     name: 'Up Network',
-    logo: '/lovable-uploads/c36fdc36-08a3-4bea-82d9-0a0f6f4d5c17.png'
-  }, 
+    logo: '/upnetwork.png'
+  },
   {
     name: 'Helium',
-    logo: '/lovable-uploads/1ce834aa-5881-4ff4-a8bc-7b93abc49ded.png'
-  }, 
+    logo: '/helium.png'
+  },
   {
     name: 'BitTorrent',
-    logo: '/lovable-uploads/21e6e52e-3fac-4f08-b90a-20b5aca06733.png'
-  }, 
+    logo: '/bittorrent.png'
+  },
   {
     name: 'zkLink',
-    logo: '/lovable-uploads/0a80d9db-bed7-4ba2-9ca1-4cfdf7df3003.png'
-  }, 
+    logo: '/zklink.png'
+  },
   {
     name: 'GasZero',
-    logo: '/lovable-uploads/40be0aba-61e1-45e0-a1a9-9b33f09c9d67.png'
-  }, 
+    logo: '/GasZero.png'
+  },
   {
     name: 'Movement',
-    logo: '/lovable-uploads/99b10fc1-6b93-48ca-882c-0eaf78e9de92.png'
-  }, 
+    logo: '/Movement.png'
+  },
   {
     name: 'AscendEX',
-    logo: '/lovable-uploads/0f0f8e8c-1bfb-45d0-a4e2-1e70cb8c1cb1.png'
+    logo: '/Ascend.png'
   }
 ];
 

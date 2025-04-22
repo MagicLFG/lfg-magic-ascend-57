@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import { Separator } from "@/components/ui/separator";
 import { Info, Grid2x2 } from "lucide-react";
@@ -52,27 +51,24 @@ export const BuiltDifferentSection = () => {
             <Grid2x2 className="h-9 w-9 text-web3-purplehover:rotate-12 transition-transform duration-200" />
           </div>
           <h3 className="text-2xl font-bold mb-2 text-web3-blue drop-shadow-glow">Mission</h3>
+          <p className="mb-4 text-lg text-white/90">
+            To power the most ambitious Web3 projects with the strategy, storytelling, and cultural fluency they need to break through in Asia — and beyond.
+          </p>
           <p className="mb-3 text-lg text-white/90">
             We craft go-to-market systems, not one-off campaigns.
           </p>
           <p className="mb-3 text-lg text-white/90">
             We build momentum that scales with your roadmap.
           </p>
-          <p className="mb-5 text-lg text-white/90">
+          <p className="mb-3 text-lg text-white/90">
             And we do it with boots-on-the-ground insights and a global mindset.
           </p>
-          <a
-            href="#services"
-            className="inline-flex items-center gap-2 font-semibold text-web3-purple transition-colors duration-200 hover:text-web3-blue story-link"
-          >
-            Learn More
-            <span>
-              <Info className="w-5 h-5" />
-            </span>
-          </a>
+          <p className="text-lg text-white/90">
+            Whether you're launching a chain, a product, or a narrative — we help you hit the ground running and keep running.
+          </p>
         </div>
         
-        {/* Divider on desktop, margin on mobile */}
+        {/* Divider */}
         <div className="my-2 md:my-0 md:mx-0 flex items-center md:flex-col">
           <Separator orientation="vertical" className="hidden md:block h-32 w-[2px] bg-gradient-to-b from-web3-purple/70 to-web3-blue/60 rounded-full mx-6" />
           <Separator orientation="horizontal" className="block md:hidden mb-0 w-24 mx-auto bg-gradient-to-r from-web3-purple/70 to-web3-blue/60 rounded-full" />
@@ -88,23 +84,25 @@ export const BuiltDifferentSection = () => {
           </div>
           <h3 className="text-2xl font-bold mb-2 text-web3-purple drop-shadow-glow">Belief</h3>
           <p className="mb-3 text-lg text-white/90">
-            Web3 doesn't need more noise — it needs clarity with edge.
+            Web3 doesn't need more noise — it needs clarity with character.
           </p>
           <p className="mb-3 text-lg text-white/90">
-            Most play it too safe or too degen. Neither scales.
+            Marketing should feel native, drive metrics, and build movements — all at once.
           </p>
-          <p className="mb-5 text-lg text-white/90">
-            We build in the middle: smart, viral, and built to last.
+          <p className="mb-3 text-lg text-white/90">
+            Too many projects either:
           </p>
-          <a
-            href="#playbook"
-            className="inline-flex items-center gap-2 font-semibold text-web3-blue transition-colors duration-200 hover:text-web3-purple story-link"
-          >
-            Learn More
-            <span>
-              <Grid2x2 className="w-5 h-5" />
-            </span>
-          </a>
+          <ul className="mb-3 text-lg text-white/90 list-disc list-inside">
+            <li>Play it too safe and fade into the feed</li>
+            <li>Or go full degen with zero follow-through</li>
+          </ul>
+          <p className="mb-3 text-lg text-white/90">
+            We believe in the middle path:
+          </p>
+          <p className="text-lg text-white/90">
+            Smart enough for investors. Fun enough for CT.<br />
+            Structured enough to scale. Wild enough to catch fire.
+          </p>
         </div>
       </div>
     </section>
