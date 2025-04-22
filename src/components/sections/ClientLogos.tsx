@@ -58,8 +58,13 @@ export const ClientLogos = () => {
               <img 
                 src={client.logo} 
                 alt={client.name} 
-                className="h-12 w-auto object-contain" 
+                className="h-12 w-auto object-contain"
+                onError={(e) => {
+                  console.error(`Failed to load image: ${client.logo}`);
+                  e.currentTarget.src = "/placeholder.svg";
+                }}
               />
+              <p className="mt-2 text-sm text-gray-400">{client.name}</p>
             </div>
           ))}
         </div>
