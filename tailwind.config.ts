@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -124,8 +123,8 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['"suisse-intl"', 'system-ui', 'sans-serif'],
-      grotesk: ['"gt-america"', 'Arial', 'sans-serif'],
+      sans: ['"ringside-regular"', 'system-ui', 'sans-serif'],
+      grotesk: ['"chronicle-display"', 'Georgia', 'serif'],
     },
   },
   plugins: [require("tailwindcss-animate")],
