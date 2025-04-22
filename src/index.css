@@ -48,7 +48,7 @@
   }
   
   body {
-    @apply bg-web3-dark text-foreground font-sans antialiased tracking-wide;
+    @apply bg-web3-dark text-foreground font-sans antialiased tracking-normal;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -56,7 +56,7 @@
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed font-light;
   }
 }
 
