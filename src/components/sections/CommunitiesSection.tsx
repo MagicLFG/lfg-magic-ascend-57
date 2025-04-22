@@ -2,20 +2,20 @@
 import React, { useEffect, useRef } from 'react';
 
 const flags = [
-  { code: 'CN', country: 'China', emoji: '🇨🇳' },
-  { code: 'KR', country: 'South Korea', emoji: '🇰🇷' },
-  { code: 'JP', country: 'Japan', emoji: '🇯🇵' },
-  { code: 'VN', country: 'Vietnam', emoji: '🇻🇳' },
-  { code: 'TH', country: 'Thailand', emoji: '🇹🇭' },
-  { code: 'RU', country: 'Russia', emoji: '🇷🇺' },
-  { code: 'TR', country: 'Turkey', emoji: '🇹🇷' },
-  { code: 'SG', country: 'Singapore', emoji: '🇸🇬' },
-  { code: 'HK', country: 'Hong Kong', emoji: '🇭🇰' },
-  { code: 'IN', country: 'India', emoji: '🇮🇳' },
-  { code: 'MY', country: 'Malaysia', emoji: '🇲🇾' },
-  { code: 'ID', country: 'Indonesia', emoji: '🇮🇩' },
-  { code: 'AE', country: 'UAE', emoji: '🇦🇪' },
-  { code: 'GLOBAL', country: 'Global', emoji: '🌐' },
+  { code: 'CN', country: 'China', flag: '🇨🇳' },
+  { code: 'KR', country: 'South Korea', flag: '🇰🇷' },
+  { code: 'JP', country: 'Japan', flag: '🇯🇵' },
+  { code: 'VN', country: 'Vietnam', flag: '🇻🇳' },
+  { code: 'TH', country: 'Thailand', flag: '🇹🇭' },
+  { code: 'RU', country: 'Russia', flag: '🇷🇺' },
+  { code: 'TR', country: 'Turkey', flag: '🇹🇷' },
+  { code: 'SG', country: 'Singapore', flag: '🇸🇬' },
+  { code: 'HK', country: 'Hong Kong', flag: '🇭🇰' },
+  { code: 'IN', country: 'India', flag: '🇮🇳' },
+  { code: 'MY', country: 'Malaysia', flag: '🇲🇾' },
+  { code: 'ID', country: 'Indonesia', flag: '🇮🇩' },
+  { code: 'AE', country: 'UAE', flag: '🇦🇪' },
+  { code: 'GLOBAL', country: 'Global', flag: '🌐' },
 ];
 
 export const CommunitiesSection = () => {
@@ -60,7 +60,7 @@ export const CommunitiesSection = () => {
               className="flex flex-col items-center text-center opacity-0"
               style={{ animationDelay: `${0.05 * index}s` }}
             >
-              <div className="text-6xl sm:text-7xl mb-3">{flag.emoji}</div>
+              <span className="text-6xl sm:text-7xl mb-3" role="img" aria-label={flag.country}>{flag.flag}</span>
               <div className="text-sm text-gray-400">{flag.country}</div>
             </div>
           ))}

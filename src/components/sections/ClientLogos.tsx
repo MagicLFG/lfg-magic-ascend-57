@@ -2,8 +2,8 @@
 import React from 'react';
 
 const clients = [
-  { name: 'Galxe', logo: 'Galxe' },
-  { name: 'KuCoin', logo: 'KuCoin' },
+  { name: 'Galxe', logo: '/lovable-uploads/99b75027-eb4d-401d-aeb6-604cc624dfd8.png' },
+  { name: 'KuCoin', logo: '/lovable-uploads/a57c7f42-4232-4785-a203-3c1601a45e7a.png' },
   { name: 'Up Network', logo: 'Up Network' },
   { name: 'Helium', logo: 'Helium' },
   { name: 'BitTorrent', logo: 'BitTorrent' },
@@ -28,7 +28,11 @@ export const ClientLogos = () => {
               className="flex flex-col items-center justify-center p-6 card-border rounded-xl animate-fade-in-up opacity-0"
               style={{ animationDelay: `${0.05 * index}s` }}
             >
-              <p className="text-2xl font-bold text-gradient">{client.logo}</p>
+              {client.logo.startsWith('/') ? (
+                <img src={client.logo} alt={client.name} className="h-12 object-contain" />
+              ) : (
+                <p className="text-2xl font-bold text-gradient">{client.logo}</p>
+              )}
             </div>
           ))}
         </div>
