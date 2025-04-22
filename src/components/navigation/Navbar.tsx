@@ -5,11 +5,9 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const NavItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Mission', href: '#mission' },
-  { name: 'Services', href: '#services' },
-  { name: 'Clients', href: '#clients' },
-  { name: 'Team', href: '#team' },
+  { name: 'About', href: '#built-different' },
+  { name: 'The Playbook', href: '#playbook' },
+  { name: 'Clients', href: '#communities' },
   { name: 'Contact', href: '#contact' },
 ];
 

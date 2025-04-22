@@ -64,8 +64,8 @@ const CountUp: React.FC<CountUpProps> = ({
 
 export const MetricsSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-web3-dark relative overflow-hidden">
-      {/* Parallax background text - Fixed the z-index and animation */}
+    <section id="amplifiers" className="py-20 md:py-32 bg-web3-dark relative overflow-hidden">
+      {/* Parallax background text */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div 
           className="whitespace-nowrap text-[8rem] md:text-[12rem] font-bold text-white opacity-[0.03] tracking-tight flex items-center"
@@ -74,14 +74,14 @@ export const MetricsSection = () => {
             willChange: 'transform'
           }}
         >
-          <span className="inline-block mx-12">Web3 Reach</span>
-          <span className="inline-block mx-12">2B+ Impressions</span>
           <span className="inline-block mx-12">900+ KOLs</span>
-          <span className="inline-block mx-12">Asia Activation</span>
-          <span className="inline-block mx-12">Web3 Reach</span>
+          <span className="inline-block mx-12">50M+ Followers</span>
           <span className="inline-block mx-12">2B+ Impressions</span>
+          <span className="inline-block mx-12">KOLs for TGE</span>
           <span className="inline-block mx-12">900+ KOLs</span>
-          <span className="inline-block mx-12">Asia Activation</span>
+          <span className="inline-block mx-12">50M+ Followers</span>
+          <span className="inline-block mx-12">2B+ Impressions</span>
+          <span className="inline-block mx-12">KOLs for TGE</span>
         </div>
       </div>
 
@@ -93,32 +93,33 @@ export const MetricsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="animate-count-up opacity-0" style={{
-          animationDelay: '0.2s'
-        }}>
-            <p className="text-5xl md:text-6xl font-bold mb-4 text-gradient">
-              <CountUp end={50} suffix="M+" />
-            </p>
-            <p className="text-xl text-gray-300">total combined followers</p>
-          </div>
-
-          <div className="animate-count-up opacity-0" style={{
-          animationDelay: '0.4s'
-        }}>
-            <p className="text-5xl md:text-6xl font-bold mb-4 text-gradient">
-              <CountUp end={2} suffix="B+" />
-            </p>
-            <p className="text-xl text-gray-300">media impressions</p>
-          </div>
-
-          <div className="animate-count-up opacity-0" style={{
-          animationDelay: '0.6s'
-        }}>
-            <p className="text-5xl md:text-6xl font-bold mb-4 text-gradient">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="animate-count-up opacity-0" style={{ animationDelay: '0.2s' }}>
+            <p className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
               <CountUp end={900} suffix="+" />
             </p>
-            <p className="text-xl text-gray-300">active KOLs across 12+ markets</p>
+            <p className="text-lg text-gray-300">active KOLs across 12+ key markets</p>
+          </div>
+
+          <div className="animate-count-up opacity-0" style={{ animationDelay: '0.4s' }}>
+            <p className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+              <CountUp end={50} suffix="M+" />
+            </p>
+            <p className="text-lg text-gray-300">total combined followers</p>
+          </div>
+
+          <div className="animate-count-up opacity-0" style={{ animationDelay: '0.6s' }}>
+            <p className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+              <CountUp end={2} suffix="B+" />
+            </p>
+            <p className="text-lg text-gray-300">media impressions generated for clients</p>
+          </div>
+
+          <div className="animate-count-up opacity-0" style={{ animationDelay: '0.8s' }}>
+            <p className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+              <CountUp end={100} suffix="+" />
+            </p>
+            <p className="text-lg text-gray-300">trusted KOLs for TGE and strategic token ops</p>
           </div>
         </div>
       </div>
