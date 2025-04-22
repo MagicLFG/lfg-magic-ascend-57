@@ -36,9 +36,7 @@
 
     --radius: 0.5rem;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -48,15 +46,27 @@
   }
   
   body {
-    @apply bg-web3-dark text-foreground font-sans antialiased tracking-normal;
+    @apply bg-web3-dark text-foreground font-sans antialiased tracking-tight;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-grotesk font-bold tracking-tight;
+    @apply font-grotesk font-normal tracking-[-0.02em];
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
   }
 
   p {
-    @apply leading-relaxed font-light;
+    @apply leading-relaxed font-sans text-base md:text-lg tracking-normal;
   }
 }
 
