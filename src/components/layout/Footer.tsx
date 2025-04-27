@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, MapPin, Twitter } from 'lucide-react';
+
 export const Footer = () => {
   return <footer id="contact" className="bg-web3-dark border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
@@ -22,17 +23,8 @@ export const Footer = () => {
             </div>
             
             <div className="flex justify-center space-x-4 mt-8">
-              <a href="#" className="text-gray-400 hover:text-web3-purple transition-colors">
+              <a href="https://x.com/lfgmagicxyz" className="text-gray-400 hover:text-web3-purple transition-colors">
                 <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-web3-purple transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-web3-purple transition-colors">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-web3-purple transition-colors">
-                <Instagram className="h-6 w-6" />
               </a>
             </div>
           </div>

@@ -1,13 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
 import { MenuIcon, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const NavItems = [
-  { name: 'About', href: '#built-different' },
   { name: 'The Playbook', href: '#services' },
-  { name: 'Clients', href: '#communities' },
+  { name: 'Clients', href: '#clients' },
   { name: 'Contact', href: '#contact' },
 ];
 
