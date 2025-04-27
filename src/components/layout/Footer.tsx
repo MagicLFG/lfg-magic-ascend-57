@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-
 export const Footer = () => {
-  return (
-    <footer id="contact" className="bg-web3-dark border-t border-gray-800">
+  return <footer id="contact" className="bg-web3-dark border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         <div className="flex flex-col items-center text-center">
           <div>
@@ -13,9 +10,7 @@ export const Footer = () => {
             </h3>
             <div className="flex items-center justify-center text-gray-300 mb-4">
               <Mail className="h-5 w-5 mr-3 text-web3-purple" />
-              <a href="mailto:charles@lfgmagic.xyz" className="hover:text-white transition-colors">
-                charles@lfgmagic.xyz
-              </a>
+              <a href="mailto:charles@lfgmagic.xyz" className="hover:text-white transition-colors">Sergei@lfgmagic.xyz</a>
             </div>
             <div className="flex items-center justify-center text-gray-300">
               <MapPin className="h-5 w-5 mr-3 text-web3-purple" />
@@ -52,6 +47,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
